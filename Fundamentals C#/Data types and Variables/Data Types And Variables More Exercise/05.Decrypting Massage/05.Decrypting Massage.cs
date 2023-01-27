@@ -1,6 +1,6 @@
 ﻿int key = int.Parse(Console.ReadLine());
 int lines = int.Parse(Console.ReadLine());
-char[] arr = new char[lines];
+int[] arr = new int[lines];
 for (int i = 0; i < lines; i++)
 {
     char symbol = char.Parse(Console.ReadLine());
@@ -13,10 +13,10 @@ for (int i = 0; i < lines; i++)
 //{
 //    Console.Write("{0}", ch);
 //}
-for (int i = 0; i < arr.Length; i++)
+for (int i = 0; i < arr.Length-1; i++)
 {
     
-    Console.Write(arr[i]);
+    Console.Write((char)arr[i]);
 }
 
 
