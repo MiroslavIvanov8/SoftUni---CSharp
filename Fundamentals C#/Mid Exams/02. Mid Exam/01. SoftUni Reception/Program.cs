@@ -13,18 +13,18 @@ namespace _01._SoftUni_Reception
             int employeesUnite = employee1+ employee2 + employee3;
             int hourCounter = 0;
 
-            while(students>=0) 
+            while(students>0) 
             {
-                hourCounter++;                
-                if (hourCounter % 4 == 0)
-                {                   
+                hourCounter++;
+                students -= employeesUnite;
+
+                if (hourCounter %4 ==0 )
+                {
+                    hourCounter++;
                     continue;
                 }
-                if (students - employeesUnite < 0)
-                    break;
-                students-= employeesUnite;
-
                 
+
 
             }
             Console.WriteLine($"Time needed: {hourCounter}h.");
