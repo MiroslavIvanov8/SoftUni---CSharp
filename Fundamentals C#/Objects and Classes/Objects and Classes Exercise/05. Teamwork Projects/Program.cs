@@ -59,7 +59,7 @@
                             break;
                         }
                     }
-                    if (!canJoin)
+                    if(!canJoin)
                         break;
                     if (teamToJoin != Ateam.TeamName) // joining a nonexisting team // need to to through all teams and then write the massage
                     {
@@ -92,6 +92,6 @@
 
         public string Creator { get; set; }
         public string TeamName { get; set; }
-        public List <string> TeamMembers { get; set;}
+        public List <string> TeamMembers { get;}
     }
 }
