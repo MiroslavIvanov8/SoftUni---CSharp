@@ -4,25 +4,26 @@
     {
         static void Main(string[] args)
         {
-           double[] numbers =Console.ReadLine()
+            int[] numbers = Console.ReadLine()
                 .Split(" ", StringSplitOptions.RemoveEmptyEntries)
-                .Select(double.Parse)
+                .Select(int.Parse)
                 .ToArray();
-
-            SortedDictionary<double, int> counts = new SortedDictionary<double, int>();
+            Dictionary<int, int> numberOccurences = new Dictionary<int, int>();
             foreach (int number in numbers)
             {
-                if (counts.ContainsKey(number))
+                if (numberOccurences.ContainsKey(number))
                 {
-                    counts[number]++;
+                    numberOccurences[number]++;
                 }
-                else
-                    counts.Add(number, 1);
+                else 
+                {
+                    numberOccurences.Add(number, 1);
+                }
             }
-            foreach (var number in counts)
+            foreach (var number in numberOccurences)
             {
                 Console.WriteLine($"{number.Key} -> {number.Value}");
             }
-        }
+        }  
     }
 }
