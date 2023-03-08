@@ -66,7 +66,7 @@
             foreach (var user in userPoints)
             {
                 Console.WriteLine(user.Key);
-                Console.WriteLine(string.Join(Environment.NewLine, user.Value.OrderByDescending(p => p.Value).Select(u => $"# {u.Key} ->{u.Value}")));
+                Console.WriteLine(string.Join(Environment.NewLine, user.Value.OrderByDescending(p => p.Value).Select(u => $"#  {u.Key} -> {u.Value}")));
             }
         }
     }
