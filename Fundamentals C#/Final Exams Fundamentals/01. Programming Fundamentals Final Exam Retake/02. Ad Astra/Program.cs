@@ -7,7 +7,7 @@ namespace _02._Ad_Astra
         static void Main(string[] args)
         {
             string input = Console.ReadLine();
-            string pattern = @"([|\|#])(?<food>[A-Z]*[a-z]*\s*[A-Z]*[a-z]*)\1(?<expireDate>\d{2}\/\d{2}\/\d{2})\1(?<calories>\d+)\1";
+            string pattern = @"([|#])(?<food>[A-Za-z\s]+)\1(?<expireDate>\d{2}\/\d{2}\/\d{2})\1(?<calories>\d+)\1";
             Regex regex = new Regex(pattern);
             MatchCollection match = regex.Matches(input);
             int totalCalories = 0;
