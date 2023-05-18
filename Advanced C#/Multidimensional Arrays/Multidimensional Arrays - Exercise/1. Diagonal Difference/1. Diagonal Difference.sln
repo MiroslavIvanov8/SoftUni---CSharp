@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Diagonal Difference", "1. Diagonal Difference.csproj", "{89E8F72C-412C-4FB6-A223-27D65C327930}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1. Diagonal Difference", "1. Diagonal Difference.csproj", "{89E8F72C-412C-4FB6-A223-27D65C327930}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Squares in Matrix", "..\2. Squares in Matrix\2. Squares in Matrix.csproj", "{CF55EAFD-52A0-4D84-9836-39A4F07FB92F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2. Squares in Matrix", "..\2. Squares in Matrix\2. Squares in Matrix.csproj", "{CF55EAFD-52A0-4D84-9836-39A4F07FB92F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Maximal Sum", "..\3. Maximal Sum\3. Maximal Sum.csproj", "{806421F6-FBD0-4F1B-8BB8-B84CD1A55B9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3. Maximal Sum", "..\3. Maximal Sum\3. Maximal Sum.csproj", "{806421F6-FBD0-4F1B-8BB8-B84CD1A55B9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Matrix Shuffling", "..\4. Matrix Shuffling\4. Matrix Shuffling.csproj", "{670BD866-93E7-4D7C-ABD0-A2344E07E533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4. Matrix Shuffling", "..\4. Matrix Shuffling\4. Matrix Shuffling.csproj", "{670BD866-93E7-4D7C-ABD0-A2344E07E533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Snake Moves", "..\5. Snake Moves\5. Snake Moves.csproj", "{F32A9C86-62FD-4CCE-BB07-8278702245E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5. Snake Moves", "..\5. Snake Moves\5. Snake Moves.csproj", "{F32A9C86-62FD-4CCE-BB07-8278702245E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6. Jagged Array Manipulator", "..\6. Jagged Array Manipulator\6. Jagged Array Manipulator.csproj", "{E45E7E38-01E8-4023-BE1D-770C7AB89BD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6. Jagged Array Manipulator", "..\6. Jagged Array Manipulator\6. Jagged Array Manipulator.csproj", "{E45E7E38-01E8-4023-BE1D-770C7AB89BD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7. Knight Game 1", "..\7. Knight Game\7. Knight Game 1.csproj", "{5426F5A4-4C93-45D3-9A79-B4D6413272AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7. Knight Game 1", "..\7. Knight Game\7. Knight Game 1.csproj", "{5426F5A4-4C93-45D3-9A79-B4D6413272AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7. Knight Game 2", "..\7. Knight Game 2\7. Knight Game 2.csproj", "{F533E845-E7FE-4F01-8AD7-5C061EDAD52D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7. Knight Game 2", "..\7. Knight Game 2\7. Knight Game 2.csproj", "{F533E845-E7FE-4F01-8AD7-5C061EDAD52D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. Bombs1", "..\8. Bombs1\8. Bombs1.csproj", "{C56180D1-8799-40C5-ABD0-5F6F567066C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{F533E845-E7FE-4F01-8AD7-5C061EDAD52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F533E845-E7FE-4F01-8AD7-5C061EDAD52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F533E845-E7FE-4F01-8AD7-5C061EDAD52D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56180D1-8799-40C5-ABD0-5F6F567066C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56180D1-8799-40C5-ABD0-5F6F567066C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56180D1-8799-40C5-ABD0-5F6F567066C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56180D1-8799-40C5-ABD0-5F6F567066C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
