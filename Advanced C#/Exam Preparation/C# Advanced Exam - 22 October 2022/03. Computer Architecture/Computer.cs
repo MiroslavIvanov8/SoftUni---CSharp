@@ -6,26 +6,31 @@ namespace ComputerArchitecture
 {
     public class Computer
     {
-          public string Model { get; set; }
-          public int Capacity { get; set; }
-          private List<CPU> multiprocessor;
-          public List<CPU> Multiprocessor
-          {
-              get { return multiprocessor; }
-              set { multiprocessor = value; }
-          }
+        public string Model { get; set; }
+        public int Capacity { get; set; }
+        private List<CPU> multiprocessor;
+        public List<CPU> Multiprocessor
+        {
+            get { return multiprocessor; }
+            set { multiprocessor = value; }
+        }
 
         public Computer(string model, int capacity)
         {
             Model = model;
             Capacity = capacity;
-            Multiprocessor = new List<CPU>();            
+            Multiprocessor = new List<CPU>();
         }
 
-        public int Count => multiprocessor.Count;
+        public int Count()
+        {
+            return this.multiprocessor.Count;
+        }
+
+    
         public void Add(CPU cpu)
         {
-            if(Count>=Capacity)
+            if(Count()>=Capacity)
             {
                 return;
             }

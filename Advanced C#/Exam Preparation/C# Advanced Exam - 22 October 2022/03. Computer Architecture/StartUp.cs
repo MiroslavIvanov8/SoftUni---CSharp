@@ -43,7 +43,7 @@ namespace ComputerArchitecture
             // Cores: 8
             // Frequency: 3.9 GHz
 
-            Console.WriteLine(computer.Count);
+            Console.WriteLine(computer.Count());
             // 3
             Console.WriteLine(computer.Remove("Intel Core i5"));
             // True
