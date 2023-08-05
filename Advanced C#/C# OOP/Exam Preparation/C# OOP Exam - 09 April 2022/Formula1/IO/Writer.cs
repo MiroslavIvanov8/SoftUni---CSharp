@@ -1,7 +1,7 @@
-﻿namespace BookingApp.IO
+﻿namespace Formula1.IO
 {
-    using BookingApp.IO.Contracts;
     using System;
+    using Formula1.IO.Contracts;
     public class Writer : IWriter
     {
         public void Write(string message)
@@ -11,7 +11,7 @@
 
         public void WriteLine(string message)
         {
-            Console.ForegroundColor= ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(message);
             Console.ForegroundColor= ConsoleColor.Green;
         }

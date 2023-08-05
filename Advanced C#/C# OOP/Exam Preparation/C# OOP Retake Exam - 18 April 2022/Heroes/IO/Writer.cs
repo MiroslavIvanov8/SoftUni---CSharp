@@ -1,7 +1,7 @@
-﻿namespace BookingApp.IO
+﻿namespace Heroes.IO
 {
-    using BookingApp.IO.Contracts;
     using System;
+    using Heroes.IO.Contracts;
     public class Writer : IWriter
     {
         public void Write(string message)
@@ -11,9 +11,9 @@
 
         public void WriteLine(string message)
         {
-            Console.ForegroundColor= ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(message);
-            Console.ForegroundColor= ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Green;
         }
     }
 }
