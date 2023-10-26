@@ -1,14 +1,17 @@
-﻿namespace SoftUni.Models;
+﻿using SoftUni.Data;
 
-public class Town
+namespace SoftUni.Models
 {
-    public Town()
+    public  class Town
     {
-        Addresses = new HashSet<Address>();
+        public Town()
+        {
+            Addresses = new HashSet<Address>();
+        }
+
+        public int TownId { get; set; }
+        public string Name { get; set; } = null!;
+
+        public virtual ICollection<Address> Addresses { get; set; }
     }
-    public int TownId { get; set; }
-
-    public string Name { get; set; } = null!;
-
-    public virtual ICollection<Address> Addresses { get; set; } 
 }
