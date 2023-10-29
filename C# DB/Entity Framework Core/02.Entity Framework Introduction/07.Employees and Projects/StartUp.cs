@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System.Globalization;
+using System.Linq.Expressions;
 using System.Text;
 using SoftUni.Data;
 using SoftUni.Models;
@@ -109,6 +110,29 @@ namespace SoftUni
 
         public static string GetEmployeesInPeriod(SoftUniContext context)
         {
+            /*
+             var employeesWithProject = context.Employees
+                .Where(e => e.EmployeesProjects
+                    .Any(ep => ep.Project.StartDate.Year >= 2001 &&
+                               ep.Project.StartDate.Year <= 2003))  // first we filter only the employees with projects in the given date
+                .Take(10)
+                .Select(e => new  // then we select needed data of these filtered employees
+                {
+                    e.FirstName,
+                    e.LastName,
+                    managerFirstName = e.Manager!.FirstName,  // notice ! operator skipping null objects
+                    managerLastName = e.Manager!.LastName,
+                    projects = e.EmployeesProjects.Select(ep => new
+                    {
+                        projectName = ep.Project.Name, // and a clever way to use ternary operator in the linq querry
+                        startDate = ep.Project.StartDate.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture),
+                        endDate = ep.Project.EndDate.HasValue ?
+                            ep.Project.EndDate.Value.ToString("M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture) : "not finished"
+
+                    })
+                }).ToList();  // like that we do all the necessary operations within the linq query, perfect example
+            */
+
             var employeesData = context.Employees
                 .Select(e => new
                 {
@@ -120,7 +144,7 @@ namespace SoftUni
                         startDate = ep.Project.StartDate,
                         endDate = ep.Project.EndDate,
                         name = ep.Project.Name
-                    }).ToList()
+                    })
                 }).ToList();
 
             
