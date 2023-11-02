@@ -11,7 +11,7 @@ namespace P01_StudentSystem.Data
                 
         }
         public StudentSystemContext(DbContextOptions options)
-        : base()
+        : base(options)
         {
             
         }
