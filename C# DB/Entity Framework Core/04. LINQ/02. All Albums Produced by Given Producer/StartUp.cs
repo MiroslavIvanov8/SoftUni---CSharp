@@ -84,7 +84,7 @@ namespace MusicHub
                     albumProducerName = s.Album.Producer.Name,
                     songDuration = s.Duration
                 })
-                .OrderByDescending(s => s.songName)
+                .OrderBy(s => s.songName)
                 .ThenBy(s => s.writerName)
                 .ToList();
 
