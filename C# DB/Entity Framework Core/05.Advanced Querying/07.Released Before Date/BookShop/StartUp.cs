@@ -129,11 +129,12 @@ public class StartUp
         return sb.ToString().TrimEnd();
     }
 
-    public static string GetBooksReleasedBefore(BookShopContext context, string date)
+    public static string GetBooksReleasedBefore(BookShopContext context, string input)
     {
-        var date1 = DateTime.Parse(date);
+        DateTime date = DateTime.ParseExact(input, "dd-MM-yyyy", null);
+
         var books = context.Books
-            .Where(b => b.ReleaseDate < date1)
+            .Where(b => b.ReleaseDate.Value.Date < date.Date)
             .Select(b => new
             {
                 b.Title,
