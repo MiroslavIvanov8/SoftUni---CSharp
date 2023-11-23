@@ -20,31 +20,7 @@ namespace CarDealer
             Console.WriteLine(ImportSales(dbContext, inputJson));
 
         }
-        public static string ImportCars(CarDealerContext context, string inputJson)
-        {
-            IMapper mapper = new Mapper(new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile<CarDealerProfile>();
-            }));
-
-            var importCarsDtos = JsonConvert.DeserializeObject<ImportCarDto[]>(inputJson);
-
-            ICollection<Car> validCars = new HashSet<Car>();
-
-            foreach (var carDto in importCarsDtos)
-            {
-                Car car = mapper.Map<Car>(carDto);
-
-                validCars.Add(car);
-            }
-
-            context.AddRange(validCars);
-
-            context.SaveChanges();
-
-            return $"Successfully imported {validCars.Count}.";
-        }
-
+        
         public static string ImportSales(CarDealerContext context, string inputJson)
         {
             IMapper mapper = CamelCaseMapperConfiguration();
