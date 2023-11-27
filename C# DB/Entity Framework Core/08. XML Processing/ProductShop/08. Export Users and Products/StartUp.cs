@@ -1,0 +1,223 @@
+﻿using AutoMapper;
+using ProductShop.Data;
+using ProductShop.DTOs.Import;
+using ProductShop.Models;
+using ProductShop.Utilities;
+using System.Collections.Generic;
+using System;
+using Castle.Core.Internal;
+using Microsoft.EntityFrameworkCore;
+using ProductShop.DTOs.Export;
+
+namespace ProductShop
+{
+    public class StartUp
+    {
+        public static void Main()
+        {
+            var dbContex = new ProductShopContext();
+
+            //dbContex.Database.EnsureDeleted();
+            //dbContex.Database.EnsureCreated();
+
+            //string inputXml = File.ReadAllText("../../../Datasets/categories-products.xml");
+            
+            Console.WriteLine(GetUsersWithProducts(dbContex));
+        }
+
+        //p01
+        public static string ImportUsers(ProductShopContext context, string inputXml)
+        {
+            IMapper mapper = CreateMapper();
+            XmlHelper xmlHelper = new XmlHelper();
+
+            ImportUserDto[] userDtos = xmlHelper.Deserialize<ImportUserDto[]>(inputXml, "Users");
+
+            ICollection<User> validUsers = new HashSet<User>();
+            foreach (var Dto in userDtos)
+            {
+                var user = mapper.Map<User>(Dto);
+
+                validUsers.Add(user);
+            }
+
+            context.Users.AddRange(validUsers);
+            context.SaveChanges();
+
+            return $"Successfully imported {validUsers.Count}";
+        }
+
+        //p02
+        public static string ImportProducts(ProductShopContext context, string inputXml)
+        {
+            IMapper mapper = CreateMapper();
+            XmlHelper xmlHelper = new XmlHelper();
+
+            ImportProductDto[] productDtos = xmlHelper.Deserialize<ImportProductDto[]>(inputXml, "Products");
+            ICollection<Product> validProducts = new HashSet<Product>();
+
+            foreach (var productDto in productDtos)
+            {
+                if(!productDto.BuyerId.HasValue)
+                    continue;
+
+                Product product = mapper.Map<Product>(productDto);
+
+                validProducts.Add(product);
+            }
+
+            context.Products.AddRange(validProducts);
+            context.SaveChanges();
+
+            return $"Successfully imported {validProducts.Count}";
+        }
+
+        //P03
+        public static string ImportCategories(ProductShopContext context, string inputXml)
+        {
+            IMapper mapper = CreateMapper();
+            XmlHelper xmlHelper = new XmlHelper();
+
+            ImportCategoryDto[] categoriesDtos = xmlHelper.Deserialize<ImportCategoryDto[]>(inputXml, "Categories");
+
+            ICollection<Category> validCategories = new HashSet<Category>();
+
+            foreach (var dto in categoriesDtos)
+            {
+                if (dto.Name.IsNullOrEmpty())
+                {
+                    continue;
+                }
+
+                Category category = mapper.Map<Category>(dto);
+
+                validCategories.Add(category);
+            }
+
+            context.Categories.AddRange(validCategories);
+
+            context.SaveChanges();
+
+            return $"Successfully imported {validCategories.Count}";
+        }
+
+        //p04
+        public static string ImportCategoryProducts(ProductShopContext context, string inputXml)
+        {
+            IMapper mapper = CreateMapper();
+            XmlHelper xmlHelper = new XmlHelper();
+
+            ImportCategoryProductDto[] categoryProductDtos =
+                xmlHelper.Deserialize<ImportCategoryProductDto[]>(inputXml, "CategoryProducts");
+
+            ICollection<CategoryProduct> validCategories = new HashSet<CategoryProduct>();
+
+            foreach (var dto in categoryProductDtos)
+            {
+                if (!context.Categories.Any(c => c.Id == dto.CategoryId) ||
+                    !context.Products.Any(p => p.Id == dto.ProductId))
+                {
+                    continue;
+                }
+
+                CategoryProduct categoryProduct = mapper.Map<CategoryProduct>(dto);
+
+                validCategories.Add(categoryProduct);
+            }
+
+            context.AddRange(validCategories);
+
+            context.SaveChanges();
+
+           return $"Successfully imported {validCategories.Count}";
+        }
+
+        //p06
+       //public static string GetSoldProducts(ProductShopContext context)
+       //{
+       //    XmlHelper xmlHelper = new XmlHelper();
+       //
+       //    ExportUserDto[] usersWithSoldProducts = context.Users
+       //        .Where(u => u.ProductsSold.Any())
+       //        .OrderBy(u => u.LastName)
+       //        .ThenBy(u => u.FirstName)
+       //        .Take(5)
+       //        .Select(u => new ExportUserDto()
+       //        {
+       //            FirstName = u.FirstName,
+       //            LastName = u.LastName,
+       //            ProductsSold = u.ProductsSold.Select(p => new ExportProductDto()
+       //            {
+       //                Name = p.Name,
+       //                Price = p.Price,
+       //            }).ToArray()
+       //        }).ToArray();
+       //
+       //    return xmlHelper.Serialize(usersWithSoldProducts, "Users");
+       //}
+
+        //p07
+        public static string GetCategoriesByProductsCount(ProductShopContext context)
+        {
+            XmlHelper xmlHelper = new XmlHelper();
+            ExportCategoryDto[] categoryDtos = context.Categories
+                .Select(c => new ExportCategoryDto()
+                {
+                    Name = c.Name,
+                    Count = c.CategoryProducts.Count(),
+                    AveragePrice = c.CategoryProducts.Average(cp => cp.Product.Price),
+                    TotalRevenue = c.CategoryProducts.Sum(cp => cp.Product.Price)
+                })
+                .OrderByDescending(c => c.Count)
+                .ThenBy(c => c.TotalRevenue)
+                .ToArray();
+
+            return xmlHelper.Serialize(categoryDtos, "Categories");
+
+        }
+
+        //p08
+        public static string GetUsersWithProducts(ProductShopContext context)
+        {
+            XmlHelper xmlHelper = new XmlHelper();
+
+
+            var userDtos = context.Users
+                .Where(u => u.ProductsSold.Any(u => u.Buyer != null))
+                .OrderByDescending(c => c.ProductsSold.Count)
+
+                .Select(c => new ExportUserDto()
+                {
+                    FirstName = c.FirstName,
+                    LastName = c.LastName,
+                    Age = c.Age,
+                    ProductsSold = new ExportProductSoldCount()
+                    {
+                        Count = c.ProductsSold.Count,
+                        Products = c.ProductsSold.Select(p => new ExportProductDto()
+                        {
+                            Name = p.Name,
+                            Price = p.Price
+                        })
+                            .OrderByDescending(p => p.Price)
+                            .ToArray()
+                    }
+
+                })
+                .Take(10)
+                .ToArray();
+
+
+            ExportUserArrayDto users = new ExportUserArrayDto()
+            {
+                Count = context.Users.Count(u => u.ProductsSold.Any()),
+                Users = userDtos
+            };
+
+            return xmlHelper.Serialize(users, "Users");
+        }
+
+        public static IMapper CreateMapper() => new Mapper(new MapperConfiguration(cfg =>
+            cfg.AddProfile<ProductShopProfile>()));
+    }
+}
