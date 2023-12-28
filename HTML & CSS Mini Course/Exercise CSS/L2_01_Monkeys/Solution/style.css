@@ -1,0 +1,49 @@
+body {
+    background-color: #FAEBC8;
+    font-family: sans-serif;    
+}
+
+body section {
+    background-color: white;
+    box-shadow: 5px 5px 15px 7px #642E12;
+    display: flex;
+    margin:125px;   
+    padding-bottom: 30px;  
+    border-radius: 20px;   
+}
+
+body section article {
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* Add this line to make children stack vertically */
+    align-items: center;
+}
+
+body section article img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    align-items: center; /* Add this line to center children horizontally */
+    text-align: center; /* Add this line to center text within the article */
+}
+
+body section article span.message {
+    display: block;
+    width: 37%;
+    text-align: left;
+    align-items: center; /* Add this line to center children horizontally */
+    text-align: left; /* Add this line to center text within the article */
+    margin-bottom: 30px ;
+
+}
+
+body section article span.author {    
+    font-style: italic;
+    font-weight: 600;
+    color: brown;
+    margin-top: 2rem;
+    text-shadow: 10px 15px 2px gray;
+    margin-top: auto;
+    
+}
