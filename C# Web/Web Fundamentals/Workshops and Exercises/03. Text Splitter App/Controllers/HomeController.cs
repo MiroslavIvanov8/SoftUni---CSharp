@@ -8,6 +8,10 @@ namespace Text_Splitter.Controllers
     {
         public IActionResult Index(TextViewModel textViewModel)
         {
+            if (string.IsNullOrEmpty(textViewModel.Text) && ModelState.ContainsKey("Text"))
+            {
+                ModelState["Text"].Errors.Clear();
+            }
             return View(textViewModel);
         }
 
