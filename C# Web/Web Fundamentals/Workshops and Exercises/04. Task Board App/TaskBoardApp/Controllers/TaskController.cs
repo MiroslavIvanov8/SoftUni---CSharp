@@ -36,6 +36,11 @@ namespace TaskBoardApp.Controllers
                 return RedirectToAction("Create");
             }
 
+            if (!this.taskService.GetBoards().Any(b => b.Id == taskModel.BoardId))
+            {
+                ModelState.AddModelError(nameof(taskModel.BoardId),"Board doesn't exist");
+            }
+
             await this.taskService.CreateTaskModelAsync(taskModel, currentUserId);
 
             return RedirectToAction("All", "Board");
