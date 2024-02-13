@@ -16,5 +16,10 @@
             public const int BoardNameMaxLength = 30;
             public const int BoardNameMinLength = 3;
         }
+
+        public static class CreatedOn
+        {
+            public const string CreatedOnForm = "dd/MM/yyyy HH:mm";
+        }
     }
 }

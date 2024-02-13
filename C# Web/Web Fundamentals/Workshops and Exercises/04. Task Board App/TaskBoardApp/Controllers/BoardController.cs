@@ -7,7 +7,7 @@ namespace TaskBoardApp.Controllers
     using Microsoft.AspNetCore.Mvc;
 
     using TaskBoardApp.Services.Interfaces;
-    using TaskBoardApp.Web.ViewModels;
+    using TaskBoardApp.Web.ViewModels.Board;
 
     [Authorize]
     public class BoardController : Controller

@@ -1,19 +1,38 @@
-﻿namespace TaskBoardApp.Controllers
+﻿using System.Security.Claims;
+using TaskBoardApp.Data;
+using TaskBoardApp.Services.Interfaces;
+using TaskBoardApp.Web.ViewModels.Home;
+
+namespace TaskBoardApp.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
     using TaskBoardApp.Web.ViewModels;
+
     public class HomeController : Controller
     {
-       
-        public HomeController()
+        private readonly IHomeService homeService;
+        private readonly TaskBoardDbContext dbContext;
+
+        public HomeController(IHomeService homeService, TaskBoardDbContext dbContext)
         {
-           
+            this.homeService = homeService;
+            this.dbContext = dbContext;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult>Index()
         {
-            return View();
+            HomeViewModel viewModel= await this.homeService.GenerateView();
+
+            if (User.Identity.IsAuthenticated)
+            {
+                string currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                int userTaskCount = this.dbContext.Tasks.Count(t => t.OwnerId == currentUserId);
+
+                viewModel.UserTaskCount = userTaskCount;
+            }
+
+            return View(viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

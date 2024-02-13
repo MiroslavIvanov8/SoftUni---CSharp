@@ -1,11 +1,11 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using TaskBoardApp.Data;
-using TaskBoardApp.Services.Interfaces;
-using TaskBoardApp.Web.ViewModels;
+﻿using TaskBoardApp.Web.ViewModels.Task;
 
 namespace TaskBoardApp.Services
 {
+    using Microsoft.EntityFrameworkCore;
+    using TaskBoardApp.Data;
+    using TaskBoardApp.Services.Interfaces;
+    using TaskBoardApp.Web.ViewModels.Board;
     public class BoardService : IBoardService
     {
         private readonly TaskBoardDbContext dbContext;
@@ -16,7 +16,7 @@ namespace TaskBoardApp.Services
         }
         public async Task<ICollection<BoardViewModel>> AllAsync()
         {
-            ICollection<BoardViewModel> boards = await dbContext
+            ICollection<BoardViewModel> boards = await this.dbContext
                 .Boards
                 .Select(b => new BoardViewModel
                 {
