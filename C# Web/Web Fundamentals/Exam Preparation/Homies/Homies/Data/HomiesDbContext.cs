@@ -52,7 +52,7 @@
                 .HasOne(ep => ep.Event)
                 .WithMany(ep => ep.EventsParticipants)
                 .HasForeignKey(ep => ep.EventId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
