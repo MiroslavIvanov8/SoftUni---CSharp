@@ -1,4 +1,5 @@
 ﻿using Library.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Library.Controllers
 {
@@ -10,6 +11,7 @@ namespace Library.Controllers
     using static CategoriesExtensions;
     using Library.Data.Models;
 
+    [Authorize]
     public class BookController : Controller
     {
         private readonly LibraryDbContext dbContext;
@@ -113,6 +115,7 @@ namespace Library.Controllers
         }
 
         //Removing a book from the users collection vie the "Remove from collection" button
+        [HttpPost]
         public async Task<IActionResult> RemoveFromCollection(int bookId)
         {
             Book? book = await this.dbContext.Books.FindAsync(bookId);
