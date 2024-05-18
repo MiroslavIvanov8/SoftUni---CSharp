@@ -36,7 +36,62 @@
 
         public T FindLowestCommonAncestor(T first, T second)
         {
-            throw new NotImplementedException();
+            BinaryTree<T> firstNode = this.FindBfs(first, this);
+            BinaryTree<T> secondNode = this.FindBfs(second, this);
+
+
+            if (firstNode == null || secondNode == null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            var firstNodeAncestors = this.FindAncestors(firstNode);
+            var secondNodeAncestors = this.FindAncestors(secondNode);
+
+            return firstNodeAncestors.Intersect(secondNodeAncestors).First();
+        }
+
+        private Queue<T> FindAncestors(BinaryTree<T> node)
+        {
+            var result = new Queue<T>();
+            var currentNode = node;
+
+            while (currentNode != null)
+            {
+                result.Enqueue(currentNode.Value);
+                currentNode = currentNode.Parent;
+            }
+
+            return result;
+        }
+
+        private BinaryTree<T> FindBfs(T element, BinaryTree<T> node)
+        {
+            var queue = new Queue<BinaryTree<T>>();
+            queue.Enqueue(node);
+
+            while (queue.Any())
+            {
+                var currentNode = queue.Dequeue();
+
+                if (currentNode.Value.Equals(element))
+                {
+                    return currentNode;
+                }
+
+                if (currentNode.LeftChild != null)
+                {
+                    queue.Enqueue(currentNode.LeftChild);
+                }
+
+                if (currentNode.RightChild != null)
+                {
+                    queue.Enqueue(currentNode.RightChild);
+                }
+
+            }
+
+            return null;
         }
     }
 }
