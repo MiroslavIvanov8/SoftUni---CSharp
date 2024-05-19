@@ -23,8 +23,7 @@ namespace Playground
             queue.Enqueue(testNode4);
             queue.Enqueue(testNode5);
 
-            testNode5.Value = 1;
-            queue.DecreaseKey(testNode5, new TestNode<int>(){Value = 1});
+            queue.DecreaseKey(4,9);
         }
     }
 

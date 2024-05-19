@@ -72,7 +72,7 @@ namespace _03.MinHeap
             this.indexes[this.elements[parentIndex]] = parentIndex;
         }
 
-        public void DecreaseKey(T key)
+        public void DecreaseKey(int v, T key)
         {
             this.HeapifyUp(this.indexes[key]);
 
@@ -89,9 +89,13 @@ namespace _03.MinHeap
         public void DecreaseKey(T key, T newKey)
         {
             var oldIndex = this.indexes[key];
+
             this.elements[oldIndex] = newKey;
+
             this.indexes.Remove(key);
+
             this.indexes[newKey] = oldIndex;
+
             this.HeapifyUp(oldIndex);
         }
     }
