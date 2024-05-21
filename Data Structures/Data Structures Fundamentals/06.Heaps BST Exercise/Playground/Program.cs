@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Channels;
 using _02.BinarySearchTree;
 using _03.MinHeap;
 using _04.CookiesProblem;
@@ -9,31 +10,30 @@ namespace Playground
     {
         static void Main(string[] args)
         {
-            var queue = new PriorityQueue<TestNode<int>>();
+            var tree = new BinarySearchTree<int>();
 
-            var testNode1 = new TestNode<int>() { Value = 6 };
-            var testNode2 = new TestNode<int>() { Value = 3 };
-            var testNode3 = new TestNode<int>() { Value = 4 };
-            var testNode4 = new TestNode<int>() { Value = 2 };
-            var testNode5 = new TestNode<int>() { Value = 8 };
+            tree.Insert(10);
+            tree.Insert(5);
+            tree.Insert(37);
+            tree.Insert(43);
+            tree.Insert(60);
+            tree.Insert(50);
+            tree.Insert(49);
+            tree.Insert(51);
+            tree.Insert(48);
+            tree.Insert(5);
+            tree.Insert(9);
+            tree.Insert(8);
+            tree.Insert(3);
+            tree.Insert(2);
+            tree.Insert(1);
 
-            queue.Enqueue(testNode1);
-            queue.Enqueue(testNode2);
-            queue.Enqueue(testNode3);
-            queue.Enqueue(testNode4);
-            queue.Enqueue(testNode5);
+            tree.Delete(50);
+            
 
-            queue.DecreaseKey(4,9);
+            tree.EachInOrder(Console.WriteLine);
         }
     }
 
-    class TestNode<T> : IComparable<TestNode<T>> where T : IComparable<T>
-    {
-        public T Value { get; set; }
-
-        public int CompareTo(TestNode<T> other)
-        {
-            return this.Value.CompareTo(other.Value);
-        }
-    }
+    
 }

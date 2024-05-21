@@ -22,9 +22,9 @@
 
         public List<T> TopView()
         {
-            var dict = new Dictionary<int, (T nodeValue, int nodeLevel)>();
+            Dictionary<int, (T, int)> dict = new Dictionary<int, (T Value, int level)>();
             this.TopView(this, 0, 0, dict);
-            var list  = dict.Values.Select(x => x.nodeValue).ToList();
+            var list = dict.Values.Select(x => x.Item1).ToList();
 
             return list;
         }
@@ -38,7 +38,7 @@
 
             if (!dict.ContainsKey(distance))
             {
-                dict.Add(distance,(node.Value,level));
+                dict[distance] = (node.Value, level);
             }
 
             this.TopView(node.LeftChild, distance - 1, level + 1, dict);

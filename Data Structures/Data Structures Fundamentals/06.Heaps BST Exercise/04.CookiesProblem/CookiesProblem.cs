@@ -11,22 +11,23 @@ namespace _04.CookiesProblem
         {
             var queue = new OrderedBag<int>();
             queue.AddMany(cookies);
-            int currentMinSweetness = queue[0];
+
+            int leastSweetCookie = queue.First();
             int steps = 0;
 
-            while (currentMinSweetness < minSweetness && queue.Count > 1)
+            while (leastSweetCookie < minSweetness && queue.Count > 1)
             {
-                int leastSweetCookie = queue.RemoveFirst();
-                int secondLeastCookie = queue.RemoveFirst();
+                leastSweetCookie = queue.RemoveFirst();
+                int secondMinSweetCookie = queue.RemoveFirst();
 
-                int newCookie = leastSweetCookie + (2 * secondLeastCookie);
-
+                int newCookie = leastSweetCookie + 2 * secondMinSweetCookie;
                 queue.Add(newCookie);
-                currentMinSweetness = queue.First();
                 steps++;
+
+                leastSweetCookie = queue.First();
             }
 
-            return currentMinSweetness < minSweetness ? -1 : steps;
+            return leastSweetCookie < minSweetness ? -1 : steps;
         }
     }
 }

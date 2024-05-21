@@ -59,9 +59,61 @@ namespace _02.BinarySearchTree
 
         public void Delete(T element)
         {
-            throw new NotImplementedException();
+            if (this.root == null)
+            {
+                throw new InvalidOperationException();
+            }
+            
+            this.root = Delete(this.root, element);
+
         }
 
+        private Node Delete(Node node, T element) // pay more attention here. Debug and notice how it traverses and changes the nodes.
+        {
+            if (node == null)
+            {
+                return null;
+            }
+
+            if (element.CompareTo(node.Value) < 0)
+            {
+                node.Left = this.Delete(node.Left, element);
+            }
+            else if (element.CompareTo(node.Value) > 0)
+            {
+                node.Right = this.Delete(node.Right, element);
+            }
+            else
+            {
+                if (node.Left == null)
+                {
+                    return node.Right;
+                }
+                if (node.Right == null)
+                {
+                    return node.Left;
+                }
+                else
+                {
+                    var temp = node;
+                    node = this.GetMin(temp.Right);
+                    node.Right = this.DeleteMin(temp.Right);
+                    node.Left = temp.Left;
+                }
+            }
+
+            node.Count = 1 + this.Count(node.Right) + this.Count(node.Left);
+            return node;
+        }
+        private Node GetMin(Node node)
+        {
+            while (node.Left != null)
+            {
+                node = node.Left;
+            }
+
+            return node;
+        }
         public void DeleteMax()
         {
             if (this.root == null)
