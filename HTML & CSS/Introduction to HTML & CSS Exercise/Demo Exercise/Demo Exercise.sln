@@ -32,6 +32,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04", "04", "{81CB064E-A1AF-
 		BlogList.html = BlogList.html
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05", "05", "{D936C908-65FF-417C-BFCB-0F547F8BB13E}"
+	ProjectSection(SolutionItems) = preProject
+		BlogPost.css = BlogPost.css
+		BlogPost.html = BlogPost.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{334A95F8-B7A4-4EAD-BFE5-9B20FADD992E}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
