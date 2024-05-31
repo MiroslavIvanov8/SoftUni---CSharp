@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: 2px solid green;
+    padding:2em
+}
+
+.site-container{
+    border: 2px solid black;
+    padding: 2em;
+    max-width: 600px;
+    margin: 0 auto
+}
+
+.site-container > * {
+    border:2px solid blue;
+    padding: 1em;
+}
+.site-container + .site-container {
+    margin-top: 2em;
+}
+p {
+    font-weight: 700;
+}

@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size:  20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section > header {
+    padding-top: 18em;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+section{
+    border: 2px solid black;
+    background-image: url(images/image1.jpg);
+    background-size: auto;
+    background-position:center;
+    background-repeat: no-repeat;
+    min-height: 850px;
+    min-width: 1250px;
+    text-align: center;
+}
+
+h2 {    
+    color: white;    
+}
+p {
+    color:white;   
+}
