@@ -1,0 +1,18 @@
+div p {
+    color: blue;
+}
+
+/* Child Combinator */
+ul > li {
+    list-style-type: square;
+}
+
+/* Adjacent Sibling Combinator */
+p + p {
+    background-color: yellow;
+}
+
+/* General Sibling Combinator */
+p ~ span {
+    font-weight: bold;
+}

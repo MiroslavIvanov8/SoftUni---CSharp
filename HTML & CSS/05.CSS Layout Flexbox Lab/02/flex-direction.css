@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2em;
+}
+
+div{
+    margin: 1em 0em
+}
+
+h3{
+    margin: 1em 0em;
+}
+
+.flex-row,
+.flex-row-reverse,
+.flex-column,
+.flex-column-reverse {
+    display: flex;
+    border: 2px solid blue;
+    max-width: 400px;
+    flex-direction: row;
+}
+
+.flex-column div,
+.flex-column-reverse div {
+    margin: 0;
+}
+.flex-item {
+    border: 2px solid black;
+    background:#eee ;
+    padding: 1em;
+}
+
+.flex-row{
+    padding-left: 1em;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+    padding-right: 1em;
+}
+
+.flex-column {
+    flex-direction: column;
+    padding:1em;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+    padding:1em;
+}
+

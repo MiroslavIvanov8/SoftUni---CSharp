@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet", type="text/css" href="2.Combinators.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Descendant Combinator Example -->
+    <div>
+        <p>This paragraph will be blue because it's inside a div.</p>
+    </div>
+    <p>This paragraph will not be blue because it's not inside a div.</p>
+    
+    <!-- Child Combinator Example -->
+    <ul>
+        <li>This list item will have a square bullet because it is a direct child of ul.</li>
+        <li>Another list item with a square bullet.</li>
+    </ul>
+    <ol>
+        <li>This list item will have the default bullet because it's not inside a ul.</li>
+    </ol>
+    
+    <!-- Adjacent Sibling Combinator Example -->
+    <p>This paragraph is not immediately following another paragraph, so it won't have a yellow background.</p>
+    <p>This paragraph immediately follows another paragraph, so it will have a yellow background.</p>
+    </div>Separator<div>
+    <p>This paragraph does not count as an adjacent sibling since there's a div in between.</p>
+    <p>This paragraph immediately follows another paragraph, so it will have a yellow background.</p>
+    
+    <!-- General Sibling Combinator Example -->
+    <p>This is a paragraph.</p>
+    <span>This span will be bold because it is a sibling of a p element.</span>
+    <div>
+        <span>This span will not be bold because it is not a sibling of a p element.</span>
+    </div>
+    <p>Another paragraph.</p>
+    <div>Some other element.</div>
+    <span>This span will also be bold because it is a sibling of the second p element.</span>
+</body>
+</html>

@@ -1,0 +1,13 @@
+p.highlighted {
+    color: aquamarine;
+}
+div#special-content{
+    background-color: dodgerblue;
+    padding: 5rem;
+}
+
+a[href^="https"]{ /*comp ound selector for those links starting with http only*/ 
+    border-bottom: 1px solid orange;
+    color: orange;
+}
+

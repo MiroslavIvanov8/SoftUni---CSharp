@@ -1,0 +1,33 @@
+nav a {
+ text-decoration: solid;
+}
+
+div > section#fancy{
+    color: aquamarine;
+    background-color: crimson;
+}
+
+div + footer img{
+    border: 2px solid red;
+    padding:  5px;
+}
+
+.highlight p{
+    background-color: aqua;
+}
+
+p + p {
+    font-style: italic;
+}
+nav ul li:first-child a {
+    font-weight: bold;
+}
+
+article.highlight h1::before{
+    content:">>";
+    color :darkred
+}
+article.highlight h1::after{
+    content:"<<";
+    color :darkred
+}

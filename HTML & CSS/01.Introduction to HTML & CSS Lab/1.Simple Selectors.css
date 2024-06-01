@@ -1,0 +1,31 @@
+h1 {
+    color:aqua;
+}
+
+p {
+    font-size: 20px;
+}
+
+h2.highlighted{
+    background-color: cadetblue;
+}
+
+li.highlighted{
+    background-color: chartreuse;
+}
+
+#main-title {
+    color:darkred;
+}
+
+#special-paragraph {
+ font-style: italic;
+}
+
+div{
+    background-color: lightsalmon;
+}
+
+ul.boldList{
+    font-style: bold;
+}
