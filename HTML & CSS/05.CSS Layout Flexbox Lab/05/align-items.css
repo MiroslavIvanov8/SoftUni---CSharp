@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    border: 2px solid black;
+    padding: 1em 0em 3em 1em
+}
+.flex-container{
+    display: flex;
+    border: 2px solid blue;
+    padding: 0.5em;
+    max-width: 350px;
+    height: 200px;
+}
+
+.flex-item{
+    border: 2px solid black;
+    background-color: rgb(228, 228, 228);
+    padding: 1em;
+    flex:start  
+}
+.align-items-stretch {
+    align-items: stretch;
+}
+.align-items-flex-start{
+    align-items: start;
+}
+.align-items-center{
+    align-items: center;
+}
+.align-items-flex-end{
+    align-items: flex-end;
+}
+.align-items-baseline{
+    align-items: baseline;
+}

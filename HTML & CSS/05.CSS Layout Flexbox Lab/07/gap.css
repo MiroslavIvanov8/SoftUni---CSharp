@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    border: 2px solid black;
+    padding: 1em 0em 3em 1em
+}
+.flex-container{
+    display: flex;
+    border: 2px solid blue;
+    padding: 0.5em;
+    max-width: 350px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.flex-item{
+    border: 2px solid black;
+    background-color: rgb(228, 228, 228);
+    padding: 1em;
+    flex:start  
+}
+.gap-row{
+    gap:2em 0
+}
+.gap-column{
+    gap: 0 2em
+}
+.gap{
+    gap:2em
+}
