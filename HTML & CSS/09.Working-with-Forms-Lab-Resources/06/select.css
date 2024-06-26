@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font: 14px/1.5 Lato, sans-serif;
+    padding: 2em;
+}
+
+input[type="search"],
+textarea,
+select,
+option,
+label,
+button,
+code{
+    font: inherit;
+}
+h2{
+    margin-top: 2em;
+}
+code {
+    display: block;
+    padding:  2em ;
+    border-radius: 0.3em;
+    margin: 2em 0;
+    border: 1px solid #ccc;
+    overflow: auto;
+    background-color: #eee;
+    font-weight: 700;
+}
+input {
+    display: inline-block;
+    padding: 0.5em 0.8em;
+    border: 2px solid #ccc;
+    outline: none;
+    border-radius: 0.3em;
+}
+input:focus{
+    border-color: #090;
+}
+select {
+    padding: 0.5em;
+    background: #eee;
+    border-radius: 0.3em;
+}
+form ul {
+    list-style: none;
+}

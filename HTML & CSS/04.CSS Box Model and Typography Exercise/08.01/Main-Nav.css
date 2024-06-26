@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2em;
+    font: 16px/1.5 Lato, sans-serif;
+    background: #ccc;
+}
+
+.site {
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+ul li {
+    position: relative; 
+    padding: 0;
+    border: 1px solid gray;
+    background: dimgray;
+    
+}
+
+ul li a {
+    display: block; /* Make the link block to fill the entire li */
+    width: 100%;
+    height: 100%;
+    padding: 1em 1.5em; /* Add padding to the link */
+    color: darkorange;
+    text-decoration: none;
+    box-sizing: border-box; /* Ensure padding is included in width and height */
+}
+
+ul li:hover {
+    background: darkorange;
+}
+
+ul li:hover > a {
+    color: #fff; /* Change link text color to white */
+}
+
+ul li ul {
+    display: none; /* Hide child ul */
+    position: absolute;
+    top: 100%; /* Position it below the parent li */
+    left: 0;
+    background: #fff; /* Change background color if needed */
+    padding: 0;
+    margin: 0;
+    border: 1px solid gray;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+ul li:hover > ul {
+    display: block; /* Show child ul on hover */
+}
+
+ul li ul li {
+    width: 200px; /* Set width for child li if needed */
+    background: dimgray;
+    border: 1px solid gray;
+}
+
+ul li ul li a {
+    padding: 0.5em 1em; /* Adjust padding for child links */
+}
+
+ul li ul li:hover {
+    background: darkorange;
+}
+
+ul li ul li:hover > a {
+    color: #fff; /* Change link text color to white */
+}
+
+ul li ul li ul {
+    top: 0;
+    left: 100%; /* This ensures it appears to the right */
+}

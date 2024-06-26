@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 14px/1.5 'Inter', sans-serif;
+    padding: 2em;
+}
+
+.site {
+    display: flex;
+    background: #85DCFF;
+}
+
+.site .site-main {
+    flex: 1 0 65%;
+}
+
+.site-main .site-header {
+    margin: 10em 2em 2em 0.5em;
+}
+
+.site-main .site-header h1 {
+    max-width: 300px;
+    padding-bottom: 0.5em;
+}
+
+.site-main section .button {
+    border-radius: 0.3em;
+    padding: 1em 1.5em;
+    margin-left: 0.3em;
+    text-decoration: none;
+    color: black;
+    background-color: #fff;
+}
+
+.site-main section .green {
+    border: 1px solid black;
+    background: #42AA59;
+}
+
+.site-main section .green:hover {
+    background: black;
+    color: #fff;
+}
+
+.site-aside {
+    flex: 1 0 35%;
+    padding: 2em 1em; /* Padding for the aside container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Set the height of the aside container */
+}
+
+.site-aside img {
+    max-width: 100%; /* Ensure the image fits within the aside container */
+    height: 100%; /* Make the image height 100% to fill the container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-radius: 0.2em;
+    box-shadow: 
+        0 0 1em 0 rgba(0, 0, 0, 0.8), 
+        0 0 0.2em 0 rgba(0, 0, 0, 0.2); /* Top and right shadow */
+}

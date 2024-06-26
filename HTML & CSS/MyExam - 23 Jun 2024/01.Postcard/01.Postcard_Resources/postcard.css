@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font:14px/1.5 "Gochi Hand", sans-serif;
+    padding: 2em;
+    background: #E0E0E0;
+}
+.card-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 1em;
+}
+.card-body {
+    padding: 2em;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+.card-body img {
+    width: 100%;    
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+.card-body section {
+    padding: 1em;
+    margin: 1em;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 1em;
+    background: #fff;
+    position: relative;
+    bottom: 12.5em;
+}
+.card-body section h3 {
+    margin-bottom: 0.5em;
+}
+.card-footer::before {
+
+}
+.card-footer {
+    border-top: 1px solid #E0E0E0; ;
+    padding: 1em 2em;
+    height: 200px;
+    font-size: 1.7em;
+}
+.card-footer h5 {
+    margin-bottom: 1em;
+}

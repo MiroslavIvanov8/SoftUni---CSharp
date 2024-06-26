@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    border: 2px solid black;
+    padding: 1em 0em 3em 1em
+}
+.flex-container{
+    display: flex;
+    border: 2px solid blue;
+    padding: 0.5em;
+    max-width: 350px;
+    align-items: flex-start;
+    height: 200px;
+}
+
+.flex-item{
+    border: 2px solid black;
+    background-color: rgb(228, 228, 228);
+    padding: 1em;
+    flex:start  
+}
+.custom-order .flex-item:nth-child(1)
+{
+    order: 5;
+}
+.custom-order .flex-item:nth-child(2)
+{
+    order: 3;
+}
+.custom-order .flex-item:nth-child(3)
+{
+    order: 1;
+}
+.custom-order .flex-item:nth-child(4)
+{
+    order: 6;
+}
+.custom-order .flex-item:nth-child(5)
+{
+    order: 2;
+}
+.custom-order .flex-item:nth-child(6)
+{
+    order: 4;
+}

@@ -1,0 +1,94 @@
+@import url('https://fonts.gstatic.com/s/kodemono/v2/A2BYn5pb0QgtVEPFnlYOk4Lwa5I.woff2');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kode Mono', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background: #ccc;
+}
+
+.site {
+    padding: 1em;
+    margin: 2em auto;
+    max-width: 50%;
+    background: rgba(36, 51, 60, 1);
+}
+
+header {
+    padding: 0.5em;
+    display: flex;
+}
+
+header a {
+    padding: 0.5em 2em;
+    background: rgba(67, 83, 89, 1);
+    flex: 1 1 50%;
+    text-align: center;
+    text-decoration: none;
+    color: darkgrey;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0 0.1);
+    border-radius: 0.1em;
+}
+
+.fancy {
+    background: rgba(26, 177, 136, 1);
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main h1 {
+    flex: 1 1 100%;
+    text-align: center;
+    margin: 1em 2em;
+    color: #fff;
+    font-weight: 100;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.5em;
+}
+
+form input {
+    flex: 1 1 100%;
+    padding: 0.5em;
+    background: transparent;
+    border: 1px solid gray;
+    margin: 0.5em 0;
+    font-family: inherit;
+}
+
+form .name {
+    padding: 0.5em;
+    flex: 1 1 20%;
+}
+
+form button {
+    flex: 1 1 100%;
+    padding: 1em;
+    margin: 1em;
+    background: rgba(26, 177, 136, 1);
+    border: none;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0 0.1);
+    border-radius: 0.1em;
+    color: #fff;
+    font-family: inherit;
+    font-size: 18px;
+}
+
+header a:hover {
+    background: rgba(21, 145, 112, 1);
+    color: #fff;
+}

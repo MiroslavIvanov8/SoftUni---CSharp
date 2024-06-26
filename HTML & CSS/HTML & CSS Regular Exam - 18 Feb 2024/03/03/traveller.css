@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 18px/1.5 'Karla', sans-serif;
+}
+
+body {
+    width: 1200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Cormorant Infant', serif;
+    font-size: 40px;
+    font-style: italic;
+}
+
+.site-header {
+    position: relative; /* Ensure positioning context for overlay */
+    background-image: url(images/poster.jpg);
+    background-size: cover;
+    width: 1200px;
+    height: 600px;
+    z-index: 0;
+}
+
+.site-header::before {
+    z-index: -1;
+    content: ''; /* Create pseudo-element for overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity (0.5 = 50%) */
+}
+
+.wrapper-narrow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 0.5em;
+}
+
+.main-nav li {
+    display: block;
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #fff;
+}
+
+.section-banner {
+    text-align: center;
+    margin: 9em auto;
+}
+
+.section-banner .wrapper h1 {
+    font-size: 4em;
+    padding-bottom: 1em;
+    color: #fff;
+    font-style: normal;
+}
+
+.section-banner .wrapper p {
+    display: inline-block; /* Ensure the <p> behaves like a block element */
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the <p> horizontally */
+    padding-bottom: 2em;
+    color: #fff;
+}
+
+.section-c1 .wrapper {
+    padding: 2em 10em;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.section-c1 .wrapper h3 {
+    padding-top: 1em;
+    text-align: left;
+    max-width: 800px; /* Adjust the maximum width as needed */
+}
+
+.section-c2 {
+    background: #E14747;
+    color: #fff;
+}
+
+.section-c2 .wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.section-c2 h6 {
+    font-style: normal;
+    font: 25px/1.5 'Karla', sans-serif;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+.section-c2 p {
+    font-size: 16px;
+}
+
+.section-c3 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    background: #F8F0E9;
+}
+
+.section-c3 .wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-c3 img {
+    max-width: 500px;
+    justify-content: center;
+    align-self: center;
+    margin: 2em 2em 1em 2em;
+}
+
+.section-c3 h4 {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 55px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.section-c3 p {
+    max-width: 500px;
+    margin: 2em auto;
+    text-align: left;
+}
+
+.section-c3 .button {
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 0.3em;
+    padding: 0.5em;
+}
+
+.section-c3 a {
+    text-decoration: none;
+    color: black;
+}
+
+.section-c3 .button-left {
+    margin: 2em 0;
+    margin-left: 19.5em;
+    max-width: 150px;
+}
+
+.section-c3 .button-center {
+    margin: 2.5em auto;
+    max-width: 200px;
+}
+
+.section-c4 {
+    background: #E14747;
+}
+
+.section-c4 .wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.section-c4 .wrapper h4 {
+    font-style: normal;
+    padding: 1.5em;
+}
+
+.section-c4 .wrapper p {
+    margin: 2em;
+}
+
+.section-c4 .wrapper a {
+    max-width: 170px;
+    border-radius: 1.5em;
+    padding: 0.7em;
+    background: #FAD87A;
+    margin: 2em auto;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.site-footer {
+    background: #352B2A;
+}
+
+.site-footer .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 500px;
+    text-align: left;
+    margin-left: 3em;
+}
+
+.site-footer .wrapper p {
+    color: #fff;
+    font-size: 14px;
+}
+
+.site-footer .wrapper p ~ p {
+    color: gray;
+    margin-bottom: 2em;
+}
+
+.site-logo {
+    display: block;
+    width: 2em;
+    height: 2em;
+    background: url(images/logo.webp) center no-repeat;
+    background-size: contain;
+    text-indent: -100vw;
+    overflow: hidden;
+}
+
+.header-logo {
+    margin: 0em 2em;
+}

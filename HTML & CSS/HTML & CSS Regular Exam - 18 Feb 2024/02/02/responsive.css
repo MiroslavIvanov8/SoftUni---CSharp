@@ -1,0 +1,89 @@
+@media (max-width: 600px) {
+    header nav {
+        margin-left: 0;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align the items */
+        padding: 0; /* Remove default padding */
+    }
+    
+    ul li {
+        padding-bottom: 0.5em;
+    }
+    
+    .header-title {
+        padding: 1em;
+        text-align: center; /* Center align the content */
+    }
+    
+    .header-title h1 {
+        font-size: 2.3em;
+        white-space: nowrap; /* Prevent the text from wrapping */        
+        text-overflow: ellipsis; /* Show ellipsis if text overflows */
+    }
+    .header-title p {
+        font-size: 1.2em;
+    }
+    .choose-us {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items horizontally */
+        padding: 2.5rem 0; /* Add padding as needed */
+    }
+    
+    .choose-us ul {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center align items vertically */
+        align-items: center; /* Center align items horizontally */
+    }
+    
+    .choose-us li {
+        width: 60%; /* Full width for each item */
+        margin-bottom: 2rem; /* Adjust spacing between items */
+        text-align: center; /* Center align text */
+    }
+    
+    .choose-us li img {
+        width: 8rem;
+        height: 8rem;
+    }
+    
+    .choose-us li h4 {
+        font-size: 1.5em;
+        padding-bottom: 0.8rem;
+    }
+    .about-us {
+        width: 450px; /* Set width to 300px */
+        margin: 0 auto; /* Center align the section */
+        padding: 2.5rem 0; /* Add padding as needed */
+    }
+    
+    .about-us p {
+        width: 100%;
+    }
+    .team-description ul {
+        flex-direction: row; /* Display items horizontally */
+        justify-content: center; /* Center align items horizontally */
+        flex-wrap: wrap; /* Allow items to wrap onto new lines if needed */
+    }
+    .team-description-wrapper {
+        padding-bottom: 0;
+    }
+    .team-description ul li {
+        width: calc(50% - 2rem); /* Adjust width to fit two items in a row with some spacing */
+        margin: 1rem; /* Add spacing around each item */
+        text-align: center; /* Center align text */
+    }
+
+    .team-description ul li img {
+        max-width: 100%; /* Ensure image does not exceed container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+}

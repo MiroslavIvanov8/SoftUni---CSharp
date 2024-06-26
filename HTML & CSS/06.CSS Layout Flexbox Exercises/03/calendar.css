@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 2em;
+    background-color: #ccc;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 1em rgb(0, 0, 0 ,0.1);
+    border-radius: 0.3em;
+}
+
+.calendar {
+    display: flex;
+}
+.calendar div {
+    border: 1px, solid #ccc;
+    padding: 1em;
+    flex-grow: 1;
+    text-align: center;
+}
+.calendar .week{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.calendar .week div:nth-child(1),
+.calendar .week div:nth-child(7){
+     flex:0 0 100%
+}
+
+.calendar .notes {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    white-space:nowrap;
+}

@@ -1,0 +1,76 @@
+@media (max-width: 600px) {
+    
+    .game-world-header {
+        max-width: auto;
+        height: 200px;
+        padding: 3em;
+    }
+    .row {
+        justify-content: center;
+        max-width: 600px;
+    }
+    .col-md-6 {
+        justify-content: center;
+    }
+    .tm-header-inner {
+        justify-content: center;
+        align-content: center;
+    }
+    nav {
+        margin: 0 auto;
+    }
+    .tm-nav-ul {
+        justify-content: center;
+    }
+    .tm-section-title {
+        margin: 0 0 0.5em 0;
+        width: 480px;
+        font-size: 3em;
+    }    
+    .tm-paging-links nav {
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        
+    }
+    .tm-paging-links nav li {
+        flex: 1 1 100%;
+    }
+    .tm-gallery {
+        margin-left: 0;
+        flex-direction: column;
+        flex-wrap: nowrap; 
+        align-items: center;
+        justify-content: center;
+    }
+    .tm-gallery-page {
+        justify-content: center;
+        width: auto;
+        margin-left: 9em;
+        flex: 1 1 100%;
+    }
+    .tm-gallery-item{
+        flex: 1 1 100%;
+        width: 100%; 
+        margin-bottom: 2em; 
+    }
+    .tm-gallery-item figure {
+        width: 380px; /* Full width for figure */
+        padding-right: 0; /* Remove right padding */
+        text-align: center; /* Center align the content */
+    }
+    .img-fluid {
+        width: 350px;
+    }
+    .img-fluid {
+        width: 100%; /* Full width for images */
+        max-width: 100%; /* Ensure images don't overflow */
+    }
+    .tm-description-figure{
+        width: auto;
+    }
+    .tm-cta-section  {
+        width: 540px;
+    }
+    
+}

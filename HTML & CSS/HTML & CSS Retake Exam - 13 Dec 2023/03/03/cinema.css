@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 14px/1.5 "Ubuntu", sans-serif;
+}
+
+body {
+    width: 1920px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.header-cinema {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Adjust gap as needed */
+}
+
+.header-cinema h1 {
+    margin: 0.5em 2em; /* Center vertically within the header */
+    position: relative; /* Needed for the pseudo-element */
+    text-align: center;
+    flex: 1; /* Allows the h1 to take up space equally */
+}
+
+.header-cinema h1::after {
+    content: "";
+    display: block;
+    width: 1px; /* 1px wide */
+    height: 100%; /* Full height of the h1 element */
+    background: gray;
+    position: absolute;
+    top: 0;
+}
+
+.header-cinema h1::before {
+    left: -0.5em; /* Adjust spacing as needed */
+}
+
+.header-cinema h1::after {
+    right: -0.5em; /* Adjust spacing as needed */
+}
+
+.header-cinema h6 {
+    margin-top: 3em; /* Adjust to align lower */
+    font-size: 14px;
+    margin-left: -2em;
+}
+
+.header-background img {
+    width: 1920px;
+    height: auto;
+}
+
+header .wrapper .header-nav ul {
+    list-style: none;
+    display: flex;    
+    margin: 2em 5em 2em 2em;
+    border: 2px solid #fff;    
+    gap: 0.2em;
+}
+
+header .wrapper .header-nav ul a {
+    padding: 1em;
+    background: #ECECEC;
+    text-decoration: none;
+    color: black;
+}
+header .wrapper .header-nav ul li a:hover{ /*!!!!*/
+    background: #3FC69D;
+}
+.section-c1 {
+    background-color: #56DBB1;
+    position: relative;
+    bottom: 8px;
+}
+.section-c1 .wrapper {
+    padding: 5em 10em;
+}
+.section-c1 .wrapper p {
+    text-align: center;
+    font-size: 16px;
+}
+.section-c2,
+.section-c4 {
+    background: #353434;
+    color: #fff;
+    position: relative;
+    bottom: 8px;
+}
+.section-c2 .wrapper,
+.section-c4 .wrapper {
+    display: flex;
+    padding :5em;
+    text-align: center;
+    justify-content: center;
+}
+.section-c2 .wrapper .section-card,
+.section-c4 .wrapper .section-card {
+    max-width: 400px;
+}
+.section-c2 .wrapper .section-card h5
+.section-c4 .wrapper .section-card h3  {
+    font-size: 16px;
+}
+.section-c2 .wrapper .section-card h5::after {
+    content: "";
+    display: block;
+    width: 90%; /* Full width of the parent */
+    height: 1px; /* Thickness of the line */
+    background-color: #fff;
+    margin: 1em 0 1em 1.2em;
+    
+}
+.section-c2 .wrapper .section-card i {
+    padding: 0.5em;
+    padding-right: 1.6em;
+    width: 80px;
+    font-size: 3em;
+    aspect-ratio: 1/1;
+    background-color: #56DBB1;
+    color: #fff;
+    margin-bottom: 0.5em;
+}
+.section-c2 .wrapper .section-card p {
+    color: gray;
+}
+.section-c3 .wrapper {
+    padding: 3em;
+    text-align: center;
+}
+.section-c3 .wrapper h3 {
+    font-size: 2.5em;
+    color: #5F5F5F;
+}
+.section-c3 .wrapper p{
+    color:#D6CEC6 ;
+    font-size: 13.5px;
+}
+.section-c3 .wrapper button{
+    padding: 1em 2em;
+    margin: 2em;
+    background: #974D1B;
+    color: #fff;
+    font-size: 16px;
+    border:none;
+    border-radius: 0.2em;
+}
+.section-c4 .wrapper{
+    padding: 8em;
+}
+.section-c4 .wrapper .section-card h3 {
+    margin: 1em;
+    font-size: 18px;
+}
+.section-c4 .wrapper .section-card p{
+    color: gray;    
+}
+footer {
+    background-color: #1B9772;
+    position:relative;
+    bottom: 9px;
+}
+footer .wrapper{
+    text-align: center;
+    padding: 5em 10em;    
+}
+footer .wrapper p {
+    color: #3FC69D;
+}
+footer .wrapper span {
+    color: #fff
+}

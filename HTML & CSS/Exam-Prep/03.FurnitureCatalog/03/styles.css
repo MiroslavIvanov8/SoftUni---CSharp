@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.logo img {
+    width: 50px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-btn:hover {
+    background-color: #0056b3;
+}
+
+.catalog {
+    background-color: #007BFF;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.catalog h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.catalog p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.catalog-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.catalog-item {
+    background: white;
+    color: black;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 40px);
+}
+
+.catalog-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.catalog-item-description {
+    text-align: left;
+}
+
+.catalog-item-description h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.catalog-item-description p {
+    font-size: 1em;
+}
+
+.features {
+    background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.features .feature {
+    display: inline-block;
+    margin: 20px;
+    text-align: left;
+    width: calc(33% - 40px);
+}
+
+.features .feature img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.features .feature h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.features .feature p {
+    font-size: 1em;
+}
+
+.about {
+    background-color: #007BFF;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+footer p {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+}

@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray;
+    border: 2px solid black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    gap: 1em;
+}
+
+.flex-item {
+    background: white;
+    padding: 0.5em;
+    border: 6px solid black;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1); /* Fixed the rgba syntax */
+    border-radius: 0.2em;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 30%; /* Each item takes up 1/3 of the row minus the gap */
+    min-width: 30%; /* Ensure a minimum width */
+    position: relative; /* Enable absolute positioning within this element */
+}
+
+.gallery .flex-item img {
+    border-radius: 0.2em;
+    padding: 1em;
+    flex: 0 1 auto
+}
+
+.gallery .flex-item figcaption {
+    display: block;
+    font-style: italic;
+    opacity: 0.7;
+    font-size: 12px;
+    position: absolute; /* Position the figcaption absolutely */
+    bottom: 0.5em; /* Adjust as needed to create some space from the bottom */
+    left: 0.5em; /* Adjust as needed to create some space from the left */
+   
+}

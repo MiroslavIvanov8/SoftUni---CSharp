@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font: 14px/1.5 "Agbulumo", sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+}
+body {
+    padding: 2em;
+}
+main{
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+}
+footer{
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.tab {
+    display: inline-block;
+    width: 2em; 
+}
+.section-header {
+    padding: 2em;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    background: #D5EBEA;
+    position: relative; 
+}
+.section-header hr {
+    color: black;
+}
+.section-header::after {
+    content: ''; 
+    display: block;
+    width: 92%; 
+    height: 2px; 
+    background: black; 
+    position: absolute;
+    bottom: 0; /* Position it at the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust for the width to center it correctly */
+}
+.section-header hr {
+    width: 100%; /* Match the width of the border */
+    height: 1.8px; /* Thickness of the border */
+    background: black; /* Color of the border */
+    border: none; /* Remove default border */
+    margin: 0em auto; /* Center horizontally and add vertical space */
+}
+.section-header h1, h4 {
+    text-align: center;
+}
+.section-header h1{
+    font-size: 3em;
+}
+.section-header h4{
+    font-size: 1.5em;
+}
+.main-wrapper {
+    padding: 1.5em;
+    display: flex;
+    gap: 1em
+}
+.main-wrapper .section-aside {
+    margin-top: 2em;
+    padding: 1em;
+    border:3px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 2em
+}
+.main-wrapper .section-aside img{
+    align-self: center;
+    width: 100%;
+}
+.main-wrapper .section-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 3em;
+}
+.main-wrapper .section-main p{
+    font-size: 18px;
+    flex: 1 1 50%;
+}
+footer h3 {
+    padding: 0.5em;
+    background: black;
+    color: #fff;
+    max-width: 400px;
+    text-align: center;
+    font-size: 20px;
+}
+.footer-wrapper {
+    padding: 2em;
+    padding-bottom: 1em;
+    background: #D5EBEA;
+    font-weight: bolder;
+}
+.footer-wrapper p:not(:last-child) {
+    margin-bottom: 1em;
+}

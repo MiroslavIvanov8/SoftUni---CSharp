@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font:14px/1.5 "PT Serif", sans-serif
+}
+
+.header-wrapper {
+    background-image: url(images/background.jpg);
+    color: #fff;
+    background-size: cover;
+    height: 450px;
+}
+.header-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.header-navigation .logo {
+    display: inline-block;
+    width: 50px; /* Adjust to your logo size */
+    height: 50px; /* Adjust to your logo size */
+    background-image: url('images/logo.webp');
+    background-size: cover;
+    margin-left: 1em;
+    background-position: center;
+    text-indent: -9999px; /* Move text out of view */
+}
+.header-navigation ul {
+    font:14px/1.5 "PT Sans", sans-serif;
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    margin:1em 2em 1em 0;
+}
+.header-heading {
+    margin-left: 7em;
+    margin-top: 2.5em;
+    max-width: 500px;
+}
+.header-heading p {
+    margin-top: 1em;
+}

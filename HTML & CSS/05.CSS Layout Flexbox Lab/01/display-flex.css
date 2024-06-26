@@ -12,6 +12,7 @@ body{
     border: 2px solid blue;
     padding: 0.5em;
     max-width: 350px;
+    height: 200px;
 }
 
 .flex-item{
