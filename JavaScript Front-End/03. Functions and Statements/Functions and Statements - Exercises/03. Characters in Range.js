@@ -16,4 +16,4 @@ function printCharactersBetweenTwo(first, second) {
     console.log(result.trimEnd());
 }
 
-printCharactersBetweenTwo('C','#');
+printCharactersBetweenTwo('C', '#');

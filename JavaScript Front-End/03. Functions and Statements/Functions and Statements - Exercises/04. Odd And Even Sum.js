@@ -1,19 +1,34 @@
-function sumOddAndEven(sequence){
-    let sequenceString = sequence.toString();
-    let oddSum = 0;
-    let evenSum = 0;
+function sumOddAndEven(sequence) {
+
+    const getEvenAndOddDigits = (x) => {
+
+        let evenDigits = [];
+        let oddDigits = [];
+
+        let currentNumber = x;
 
 
-    for (const number of sequenceString) {
-        
-        let currentNum = parseInt(number);
+        while (currentNumber > 0) {
+            const lastDigit = currentNumber % 10;
 
-        if(currentNum % 2 ==0){
-            evenSum += currentNum;
-        } else {
-            oddSum += currentNum;
+            if (lastDigit % 2 == 0) {
+                evenDigits.push(lastDigit);
+            } else {
+                oddDigits.push(lastDigit);
+            }
+
+            currentNumber = parseInt(currentNumber / 10);
         }
+
+        return [evenDigits, oddDigits];
     }
+
+    const [evenDigits, oddDigits] = getEvenAndOddDigits(sequence)
+    const getSumOfDigits = (array) => array.reduce((a, b) => a + b, 0);
+
+    const evenSum = getSumOfDigits(evenDigits);
+    const oddSum = getSumOfDigits(oddDigits);
+
 
     console.log(`Odd sum = ${oddSum}, Even sum = ${evenSum}`);
 }
