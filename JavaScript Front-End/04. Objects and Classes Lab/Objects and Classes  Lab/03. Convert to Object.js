@@ -1,7 +1,7 @@
 function printJSONObject(input){
     let object = JSON.parse(input);
     for (const key in object) {
-        console.log(`${key} -> ${object[key]}`);
+        console.log(`${key}: ${object[key]}`);
     }
 }
 
