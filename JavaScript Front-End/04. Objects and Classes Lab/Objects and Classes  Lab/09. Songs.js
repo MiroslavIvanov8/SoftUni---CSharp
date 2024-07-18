@@ -28,10 +28,8 @@ function printSongs(input) {
 
     const typeList = input[input.length - 1];
 
-    if(typeList === 'all'){
-        for (const key in playLists) {
-            allSongs.forEach(song => song.print());
-        }
+    if(typeList === 'all'){        
+            allSongs.forEach(song => song.print());       
     } else if(playLists[typeList]){
         playLists[typeList].forEach(song => song.print());
     }
