@@ -1,22 +1,22 @@
-function printTowns(input){
-    let Town = class{
-        constructor(name, latitude, longitude){
-            this.name = name,
-            this.latitude = latitude,
-            this.longitude = longitude
+function printTowns(input) {
+    let Town = class {
+        constructor(name, latitude, longitude) {
+                this.name = name,
+                this.latitude = latitude,
+                this.longitude = longitude
         }
 
-        print(){
+        print() {
             console.log(`{ town: '${this.name}', latitude: '${Number(this.latitude).toFixed(2)}', longitude: '${Number(this.longitude).toFixed(2)}' }`);
         }
     }
 
-    let towns =[];
-    input.forEach(entry => {
-        const [name, latitude, longitude] = entry.split(' | ');
-        let newTown = new Town(name, latitude, longitude);
-        towns.push(newTown);
-    })
+    let towns = input.reduce((acc, cur) => {
+
+        const [townName, latitude, longitude] = cur.split(' | ')
+        acc.push(new Town(townName, latitude, longitude))
+        return acc;
+    } , []);
 
     for (const town of towns) {
         town.print();

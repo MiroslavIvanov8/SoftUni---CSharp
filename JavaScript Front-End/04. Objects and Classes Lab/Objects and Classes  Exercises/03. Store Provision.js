@@ -1,4 +1,4 @@
-function printStoreProvisions(firstArr, secondArr) {
+function printStoredProvisions(firstArr, secondArr) {
 
     let provisions = {};
 
@@ -15,7 +15,6 @@ function printStoreProvisions(firstArr, secondArr) {
                 provisions[product] += parseInt(quantity);
             }       
         }
-
     }
     
     fillProvisions(firstArr);
@@ -26,7 +25,7 @@ function printStoreProvisions(firstArr, secondArr) {
     }
 }
 
-printStoreProvisions([
+printStoredProvisions([
     'Chips', '5', 'CocaCola', '9', 'Bananas', '14', 'Pasta', '4', 'Beer', '2'
 ],
     [
