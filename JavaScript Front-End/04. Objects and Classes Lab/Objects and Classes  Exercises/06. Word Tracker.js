@@ -1,27 +1,21 @@
 function trackWords(input){
     
-    let specialWords = input[0].split(' ');
-    
-    let wordOccurrences = {};
-    specialWords.forEach(word => {
-        wordOccurrences[word] =  0;
-    });
+    const[specialWords, ...restOfTheWords] = input;
 
+    const words = specialWords.split(' ').reduce((acc, word) =>{
+        acc[word] = 0;
+        return acc;
+    }, {});
 
-    input.forEach((word) => {
-        if(wordOccurrences.hasOwnProperty(word)){
-            wordOccurrences[word]++;
+    restOfTheWords.forEach(word => {
+        if(words.hasOwnProperty(word)){
+            words[word] += 1;
         }
-    });
+    })
 
-    let entries = Object.entries(wordOccurrences);
-    entries.sort((a, b) => b[1] - a[1]);
-
-    let sortedWordOccurrences = Object.fromEntries(entries);
-
-    for (const word in sortedWordOccurrences) {
-        console.log(`${word} - ${wordOccurrences[word]}`);
-    }
+    Object.keys(words)
+    .sort((a, b) => words[b] - words[a])
+    .forEach(word => console.log(`${word} - ${words[word]}`));
 }
 
 trackWords([
