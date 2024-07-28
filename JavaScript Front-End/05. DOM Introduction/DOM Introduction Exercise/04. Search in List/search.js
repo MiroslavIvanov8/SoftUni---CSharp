@@ -1,32 +1,30 @@
 function search() {
-   const towns = document.getElementById('towns').textContent.split('\n');
-   let townsElements = document.getElementsByTagName('li');
-   const searchTerm = document.getElementById('searchText').value.toLowerCase();
- 
-   debugger;
-   let townsElementsArr = Array.from(townsElements);
-   let resultElement = document.getElementById('result');
-
-   for (let i = 0; i < townsElementsArr.length; i++) {
-      townsElements[i].style.fontWeight = 300;
-      townsElements[i].style.textDecoration = 'none';
+   const townEls = document.querySelectorAll('#towns li');
+   
+   function getMatchElements(input){
+      return [...townEls].filter((x) => 
+      x.textContent.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
    }
 
-   const townsArr = Array.from(towns)
-   .filter(town => town.trim().toLowerCase().includes(searchTerm));
+   function clearPreviousState(){
+      townEls.forEach((el) => {
+         el.style.fontWeight = 'normal';
+         el.style.textDecoration = 'none';
+      })
+   }
 
-   for (let i = 0; i < townsElementsArr.length; i++) {
-      let currTown = townsElements[i].textContent
+   clearPreviousState();
+   const [inputEl] = document.getElementsByTagName('input');
 
-      for (let j = 0; j < townsArr.length; j++) {
-         const matchTown = townsArr[j].trim();;
+   const matchElements = getMatchElements(inputEl.value);
 
-         if (currTown == matchTown) {
-            townsElements[i].style.fontWeight = 'bold';
-            townsElements[i].style.textDecoration = 'underline';
-         }
+   matchElements.forEach((matchedEl) => {
+      matchedEl.style.fontWeight = 'bold';
+      matchedEl.style.textDecoration = 'underline';
       }
-   }    
-   
-   resultElement.textContent = `${townsArr.length} matches found`;
+   );
+
+   let resultEl = document.getElementById('result');
+   resultEl.textContent = `${matchElements.length} matches found`
+
 }
