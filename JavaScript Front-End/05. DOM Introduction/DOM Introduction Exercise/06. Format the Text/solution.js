@@ -1,26 +1,21 @@
 function solve() {
   
-    const text = document.getElementById('input')
-                         .value
-                         .trim()
-                         .split('.')
-                         .slice(0,this.length - 1);
+  const inputEl = document.getElementById('input');
+  const outputEl = document.getElementById('output');
 
-    let outputElement = document.getElementById('output');                     
-    
-    //debugger;
-    let paragraphText = '';
-    let cnt = 0;
-    for (let i = 0; i < text.length; i++) {
-      paragraphText += text[i] + '.';
-      cnt++;
+  function createParagraphEl(text) {
+    const pEl = document.createElement('p');
+    pEl.textContent = text;
+    return pEl;
+  }
 
-      if (cnt % 3 === 0 || i === text.length - 1) {
-          const pElement = document.createElement('p');
-          pElement.textContent = paragraphText.trim();
-          outputElement.appendChild(pElement);
-          paragraphText = '';
-      }
+
+  const sentences = input.value.split('.').filter(Boolean).map((x) => x.trim());
+
+  for (let i = 0; i < sentences.length; i+=3) {
+    const currentText = sentences.slice(i, i + 3).join('. ').concat('.');
+    const currentParagraph = createParagraphEl(currentText);
+    outputEl.appendChild(currentParagraph);    
   }
 }
 
