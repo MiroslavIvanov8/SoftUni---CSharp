@@ -1,6 +1,7 @@
 function create(words) {
 
    const divResultEl = document.querySelector('div#content');
+   
    words.forEach((word) => {
       const divEl = document.createElement('div');
       const paragraphEl = document.createElement('p');
@@ -9,12 +10,19 @@ function create(words) {
       paragraphEl.style.display = 'none';     
 
       divEl.appendChild(paragraphEl);
+
+      divEl.addEventListener('click', (e) => {     
+         if(e.target.tagName == 'DIV'){
+            e.target.children[0].style.display = 'block';
+         }
+      })
+
       divResultEl.appendChild(divEl);
    })
 
-   divResultEl.addEventListener('click', (e) => {      
-      if(e.target.tagName == 'DIV'){
-         e.target.children[0].style.display = 'block';
-      }
-   })
+   //divResultEl.addEventListener('click', (e) => {      
+   //   if(e.target.tagName == 'DIV'){
+   //      e.target.children[0].style.display = 'block';
+   //   }
+   //})
 }
